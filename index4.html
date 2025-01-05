@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List</title>
+<link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <h1>My Shopping List</h1>
+    <form id="shopping-form">
+        <label for="item-input">Enter a new item:</label>
+        <input type="text" id="item-input" required>
+        <button type="submit">Add item</button>
+    </form>
+    <ul id="shopping-list"></ul>
+
+    <script>
+        const form = document.getElementById('shopping-form');
+        const input = document.getElementById('item-input');
+        const list = document.getElementById('shopping-list');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newItem = input.value.trim();
+            if (newItem) {
+                const listItem = document.createElement('li');
+                listItem.textContent = newItem;
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', function() {
+                    list.removeChild(listItem);
+                });
+                listItem.appendChild(deleteButton);
+                list.appendChild(listItem);
+                input.value = '';
+                input.focus();
+            }
+        });
+    </script>
+</body>
+</html>

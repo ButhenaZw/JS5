@@ -1,0 +1,10 @@
+.main{display: grid;
+    gap: 20px;
+    margin: 20px;
+    }
+    .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+    }

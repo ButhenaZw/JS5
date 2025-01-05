@@ -1,0 +1,7 @@
+.main{display: grid;
+gap: 20px;
+margin: 20px;
+}
+button{
+    background-color:#60A1FD ;
+}
